@@ -1,9 +1,9 @@
 <template>
-    <div class="col-1">
+    <div class="col-1 side-nav">
         <a class="logo" aria-current="page" href="#">
             <img class="logo-img" src="../assets/logo.png" alt="">
         </a>
-        <nav class="nav flex-column">
+        <nav class="nav flex-column d-inline-flex">
             <a class="nav-link active" aria-current="page" href="#">
                 <img src="../assets/home.svg" alt="">
             </a>
@@ -25,7 +25,9 @@
 <style scoped>
 .side-nav {
     position: relative;
-    width: 10%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
@@ -37,7 +39,6 @@
 }
 
 nav {
-    align-items: center;
     position: relative;
     top: 35%;
     transform: translateY(-50%);
@@ -46,6 +47,11 @@ nav {
 nav a {
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+nav a img {
+    display: block;
+    margin: auto;
 }
 
 /* home 1 */
