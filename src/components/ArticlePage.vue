@@ -4,17 +4,7 @@
     <div class="col col-xl article">
       <ArticleTab></ArticleTab>
       <div class="right-bar">
-        <div class="container side-bar">
-          <div class="container text-center d-grid gap-3 button-group">
-            <div class="row ">
-              <button class="col btn" type="button">Button</button>
-              <button class="col btn" type="button">Button</button>
-            </div>
-            <div class="row">
-              <button class="col btn btn-primary" type="button">Button</button>
-            </div>
-          </div>
-        </div>
+        <SideBar></SideBar>
       </div>
     </div>
   </div>
@@ -23,11 +13,13 @@
 <script>
 import ArticleNavbar from './ArticleNavbar.vue'
 import ArticleTab from './ArticleTab.vue'
+import SideBar from './SideBar.vue'
 export default {
   name: 'App',
   components: {
     ArticleNavbar,
-    ArticleTab
+    ArticleTab,
+    SideBar
   }
 }
 </script>
@@ -42,7 +34,8 @@ export default {
 
 .article {
   border-radius: 50px 0 0 0;
-  background: #E5E5E5;
+  background: rgba(245, 245, 245, 1);
+  ;
   display: flex;
 }
 
@@ -51,18 +44,5 @@ export default {
   border-radius: 50px 0 0 0;
   background: #fff;
   position: relative;
-}
-
-.button-group {
-  position: relative;
-  top: 10%;
-  transform: translateY(50%);
-  padding: 20px;
-}
-
-.btn {
-  padding: 1px 4px;
-  margin: 5px;
-  border-radius: 100px;
 }
 </style>

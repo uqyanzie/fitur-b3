@@ -35,12 +35,12 @@
 }
 
 .logo-img {
-    width: 85px;
+    width: 55px;
 }
 
 nav {
     position: relative;
-    top: 35%;
+    top: 30%;
     transform: translateY(-50%);
 }
 
@@ -51,7 +51,7 @@ nav a {
 
 nav a img {
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
 
 /* home 1 */

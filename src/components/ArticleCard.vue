@@ -1,7 +1,7 @@
 <template>
     <div class="card w-100">
         <div class="card-body d-flex ">
-            <img class="flex-item preview-pict" src="../assets/image.svg" alt="">
+            <img class="preview-pict" src="../assets/image.svg" alt="">
             <div class="flex-item">
                 <h6 class="card-title">
                     <span>
@@ -33,7 +33,7 @@
     border: 0 0 1px 1px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 0px, rgba(0, 0, 0, 0.23) 0px 3px 6px 0px;
     margin: 25px 0 50px 0;
-    max-height: 250px;
+
 }
 
 .card-body {
