@@ -20,8 +20,23 @@
                     Esse, nesciunt vitae nemo doloremque reprehenderit eaque quos numquam iste et quam dolores totam,
                     modi doloribus assumenda delectus velit facilis vel accusamus.
                 </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <p href="#" class="card-info">
+                    <span class="publish-date">
+                        Okt 2016
+                    </span>
+                    <span class="category">
+                        Category
+                    </span>
+                    <span class="icons">
+                        <span>
+                            <img src="../assets/views.svg" alt=""> 0
+                        </span>
+                        <span>
+                            <img src="../assets/comment.svg" alt=""> 0
+                        </span>
+
+                    </span>
+                </p>
             </div>
         </div>
     </div>
@@ -32,29 +47,52 @@
     border-radius: 0;
     border: 0 0 1px 1px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 0px, rgba(0, 0, 0, 0.23) 0px 3px 6px 0px;
-    margin: 25px 0 50px 0;
+    margin: 25px 0 35px 0;
+    background: rgba(255, 255, 255, 1);
 
 }
 
 .card-body {
-    height: inherit;
+    height: 200px;
 }
 
 .card-text {
-    max-width: 80%;
-    max-height: 100px;
+    max-height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .flex-item {
     margin-left: 30px;
 }
 
-.flex-item>p {
-    overflow: hidden;
+.preview-pict {
+    width: 120px;
+    margin: 10px 25px;
 }
 
-.preview-pict {
-    max-width: 150px;
-    margin-right: 5%;
+.card-info {
+    font-size: 14px;
+}
+
+.publish-date {}
+
+.category {
+    margin-left: 25px;
+    background-color: rgba(184, 184, 184, 1);
+    ;
+    padding: 0 12px;
+    border-radius: 15px;
+}
+
+.icons {
+    float: right;
+    margin-right: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .preview-pict {
+        width: 70px;
+    }
 }
 </style>
