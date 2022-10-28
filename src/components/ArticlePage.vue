@@ -35,7 +35,6 @@ export default {
 .article {
   border-radius: 50px 0 0 0;
   background: rgba(245, 245, 245, 1);
-  ;
   display: flex;
 }
 

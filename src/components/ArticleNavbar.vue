@@ -1,17 +1,18 @@
 <template>
     <div class="col-1 side-nav">
+
         <a class="logo" aria-current="page" href="#">
             <img class="logo-img" src="../assets/logo.png" alt="">
         </a>
         <nav class="nav flex-column d-inline-flex">
-            <a class="nav-link active" aria-current="page" href="#">
-                <img src="../assets/home.svg" alt="">
+            <a class="nav-link active" aria-current="page" href="">
+                <img class="nav-icon" src="../assets/home.svg" alt="">
             </a>
             <a class="nav-link" href="#">
-                <img src="../assets/profile.svg" alt="">
+                <img class="nav-icon" src="../assets/profile.svg" alt="">
             </a>
             <a class="nav-link" href="#">
-                <img src="../assets/write.svg" alt="">
+                <img class="nav-icon" src="../assets/write.svg" alt="">
             </a>
         </nav>
     </div>
@@ -31,17 +32,24 @@
 }
 
 .logo {
-    margin: 0 10px 0 10px;
+    position: relative;
+    top: 20px;
+    margin: 0 auto;
 }
 
 .logo-img {
-    width: 55px;
+    width: 65px;
 }
 
 nav {
     position: relative;
     top: 30%;
     transform: translateY(-50%);
+}
+
+.nav-link {
+    padding: 8px 8px;
+    width: 60px;
 }
 
 nav a {
@@ -52,6 +60,15 @@ nav a {
 nav a img {
     display: block;
     margin: 0 auto;
+}
+
+.nav-icon {
+    width: 30px;
+    margin: 0 auto;
+}
+
+.nav-icon:hover {
+    scale: 1.1;
 }
 
 /* home 1 */

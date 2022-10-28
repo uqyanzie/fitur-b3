@@ -1,55 +1,68 @@
 <template>
-    <div class="card w-100">
-        <div class="card-body d-flex ">
-            <img class="preview-pict" src="../assets/image.svg" alt="">
-            <div class="flex-item">
-                <h6 class="card-title">
-                    <span>
-                        <img src="../assets/creator.png" alt="">
-                    </span>
-                    Creator Name
-                    <span style="float : right">
-                        <img src="../assets/save.svg" alt="">
-                        <img src="../assets/report.svg" alt="">
-                    </span>
-                </h6>
-                <h4 class="card-subtitle mb-2">Article Title</h4>
-                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                    veroquos, saepe atque quae nostrum numquam sequi quis minus laboriosam, repellat, ipsum
-                    voluptatem laudantium perspiciatis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse, nesciunt vitae nemo doloremque reprehenderit eaque quos numquam iste et quam dolores totam,
-                    modi doloribus assumenda delectus velit facilis vel accusamus.
-                </p>
-                <p href="#" class="card-info">
-                    <span class="publish-date">
-                        Okt 2016
-                    </span>
-                    <span class="category">
-                        Category
-                    </span>
-                    <span class="icons">
+    <a href="">
+        <div class="card w-100">
+            <div class="card-body d-flex ">
+                <img class="preview-pict" src="../assets/image.svg" alt="">
+                <div class="flex-item">
+                    <h6 class="card-title">
                         <span>
-                            <img src="../assets/views.svg" alt=""> 0
+                            <img src="../assets/creator.png" alt="">
                         </span>
-                        <span>
-                            <img src="../assets/comment.svg" alt=""> 0
+                        Creator Name
+                        <span style="float : right">
+                            <img src="../assets/save.svg" alt="">
+                            <img src="../assets/report.svg" alt="">
                         </span>
+                    </h6>
+                    <h4 class="card-subtitle mb-2">Article Title</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                        veroquos, saepe atque quae nostrum numquam sequi quis minus laboriosam, repellat, ipsum
+                        voluptatem laudantium perspiciatis facilis. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit.
+                        Esse, nesciunt vitae nemo doloremque reprehenderit eaque quos numquam iste et quam dolores
+                        totam,
+                        modi doloribus assumenda delectus velit facilis vel accusamus.
+                    </p>
+                    <p href="#" class="card-info">
+                        <span class="publish-date">
+                            Okt 2016
+                        </span>
+                        <span class="category">
+                            Category
+                        </span>
+                        <span class="icons">
+                            <span>
+                                <img src="../assets/views.svg" alt=""> 0
+                            </span>
+                            <span>
+                                <img src="../assets/comment.svg" alt=""> 0
+                            </span>
 
-                    </span>
-                </p>
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
+    </a>
 </template>
 
 <style scoped>
+a {
+    color: black;
+    text-decoration: none;
+}
+
 .card {
     border-radius: 0;
     border: 0 0 1px 1px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px 0px, rgba(0, 0, 0, 0.23) 0px 3px 6px 0px;
     margin: 25px 0 35px 0;
     background: rgba(255, 255, 255, 1);
+    transition: 400ms;
+}
 
+.card:hover {
+    scale: 1.03;
 }
 
 .card-body {

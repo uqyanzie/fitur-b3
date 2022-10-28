@@ -13,6 +13,9 @@
             <li>
                 <ArticleCard></ArticleCard>
             </li>
+            <li>
+                <ArticleCard></ArticleCard>
+            </li>
         </ul>
     </div>
 </template>
