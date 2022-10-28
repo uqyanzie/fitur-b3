@@ -2,7 +2,9 @@
   <div class="article-page d-flex">
     <ArticleNavbar></ArticleNavbar>
     <div class="col col-xl article">
-      <ArticleTab></ArticleTab>
+      <div class="container">
+        <ArticleTab></ArticleTab>
+      </div>
       <div class="right-bar">
         <SideBar></SideBar>
       </div>

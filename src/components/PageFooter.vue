@@ -50,7 +50,7 @@
 <style scoped>
 .footer {
     background-color: #309C9F;
-    height: 367px;
+    height: 300px;
     width: 100%;
     margin: 0 auto;
 }
