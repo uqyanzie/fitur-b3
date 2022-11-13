@@ -17,7 +17,7 @@ export default {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     font-size: 12px;
-    padding: 10px 0 10px 15px;
+    padding: 10px 15px 10px 15px;
     margin: 3 auto;
 }
 

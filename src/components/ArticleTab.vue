@@ -11,32 +11,97 @@
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-for-you" role="tabpanel" aria-labelledby="nav-for-you-tab"
                 tabindex="0">
-                <ArticleList></ArticleList>
+                <ArticleList :articleList=articles></ArticleList>
             </div>
             <div class="tab-pane fade" id="nav-following" role="tabpanel" aria-labelledby="nav-following-tab"
                 tabindex="0">
-                <ArticleList></ArticleList>
+                <ArticleList :articleList=articles></ArticleList>
             </div>
-            <div class="tab-pane fade" id="nav-bookmark" role="tabpanel" aria-labelledby="nav-bookmark-tab"
-                tabindex="0">
-                <ArticleList></ArticleList>
-            </div>
+        </div>
+        <div class="page-nav d-flex justify-content-around mt-3">
+            <button @click="prevPage()">
+                &laquo;
+            </button>
+            <h5>{{ page + 1 }}</h5>
+            <button @click="nextPage()">
+                &raquo;
+            </button>
         </div>
     </div>
 </template>
 
 <script>
 import ArticleList from './ArticleList.vue'
+import axios from "axios"
 
 export default {
     name: 'App',
     components: {
         ArticleList
-    }
+    },
+
+    data() {
+        return {
+            result: [],
+            articles: [],
+            length: 0,
+            page: 0,
+            searchVal: ''
+        }
+    },
+    methods: {
+        prevPage() {
+            if (this.page > 0) {
+                this.page = this.page - 1
+            }
+            axios
+                .get(`http://localhost:3000/artikel/publish?page=${this.page}&search=${this.searchVal}`)
+                .then(response => {
+                    this.result = response.data
+                    this.articles = this.result.data
+                    this.length = (this.result.totalRows % 5 == 0) ? this.result.totalRows / 5 : Math.round((this.result.totalRows / 5)) + 1
+                    console.log(this.length)
+                    console.log(`http://localhost:3000/artikel/publish?page=${this.page}`)
+                })
+                .catch(error => console.log(error))
+        },
+        nextPage() {
+            if (this.page < this.length - 1) {
+                this.page = this.page + 1
+            }
+            axios
+                .get(`http://localhost:3000/artikel/publish?page=${this.page}`)
+                .then(response => {
+                    this.result = response.data
+                    this.articles = this.result.data
+                    this.length = (this.result.totalRows % 5 == 0) ? this.result.totalRows / 5 : Math.round((this.result.totalRows / 5)) + 1
+                    console.log(this.length)
+                    console.log(`http://localhost:3000/artikel/publish?page=${this.page}`)
+                })
+                .catch(error => console.log(error))
+        },
+    },
+    mounted() {
+        axios
+            .get(`http://localhost:3000/artikel/publish?page=${this.page}`)
+            .then(response => {
+                this.result = response.data
+                this.articles = this.result.data
+                this.length = (this.result.totalRows % 5 == 0) ? this.result.totalRows / 5 : Math.round((this.result.totalRows / 5)) + 1
+                console.log(this.length)
+                console.log(`http://localhost:3000/artikel/publish?page=${this.page}`)
+            })
+            .catch(error => console.log(error))
+    },
+
 }
 </script>
 
 <style scoped>
+.container {
+    margin: 10px 0;
+}
+
 .article-tab {
     position: relative;
     left: 2%;
@@ -66,8 +131,7 @@ export default {
     border: none;
 }
 
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-item.show .nav-link {
+.nav-link.active {
     color: var(--bs-nav-tabs-link-active-color);
     background-color: var(--bs-nav-tabs-link-active-bg);
     border-color: var(--bs-nav-tabs-link-active-border-color);
@@ -96,7 +160,12 @@ export default {
 }
 
 .tab-pane {
-    height: 100vh;
-    width: 95%;
+    height: 200vh;
+    width: 90%;
+}
+
+.page-nav {
+    width: 200px;
+    margin: 0 auto;
 }
 </style>

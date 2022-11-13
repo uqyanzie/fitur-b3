@@ -14,8 +14,8 @@
                     <div class="card card-body">
                         <fieldset>
                             Sort by <br>
-                            <input type="radio" id="sort-id">Date
-                            <input type="radio" id="sort-id">Popular
+                            <input class="filter-arg" type="radio" id="sort-id">Date
+                            <input class="filter-arg" type="radio" id="sort-id">Popular
                         </fieldset>
                     </div>
                 </div>
@@ -75,5 +75,9 @@ export default {
 
 .collapse {
     height: 200px;
+}
+
+.filter-arg {
+    margin: 10px 0 10px 3px;
 }
 </style>

@@ -1,41 +1,39 @@
 <template>
     <a href="">
-        <div class="card w-100">
+        <div class="card">
             <div class="card-body d-flex ">
-                <img class="preview-pict" src="../assets/image.svg" alt="">
                 <div class="flex-item">
-                    <h6 class="card-title">
+                    <img class="preview-pict" src="../assets/image.svg" alt="">
+                </div>
+                <div class="flex-item card-content">
+                    <div class="card-head">
                         <span>
-                            <img src="../assets/creator.png" alt="">
+                            <img src="../assets/creator.png" alt="Author Profile" style="width: 40px;">
                         </span>
-                        Creator Name
+                        {{ Preview.id_user }}
                         <span style="float : right">
                             <img src="../assets/save.svg" alt="">
                             <img src="../assets/report.svg" alt="">
                         </span>
-                    </h6>
-                    <h4 class="card-subtitle mb-2">Article Title</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                        veroquos, saepe atque quae nostrum numquam sequi quis minus laboriosam, repellat, ipsum
-                        voluptatem laudantium perspiciatis facilis. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        Esse, nesciunt vitae nemo doloremque reprehenderit eaque quos numquam iste et quam dolores
-                        totam,
-                        modi doloribus assumenda delectus velit facilis vel accusamus.
-                    </p>
+                    </div>
+                    <div class="card-text">
+                        <h4 class="card-subtitle mb-2"> {{ Preview.judul_artikel }} </h4>
+                        <p>{{ Preview.isi_artikel }}</p>
+                    </div>
+
                     <p href="#" class="card-info">
                         <span class="publish-date">
-                            Okt 2016
+                            {{ Preview.waktu_publish }}
                         </span>
                         <span class="category">
-                            Category
+                            {{ Preview.id_kategori }}
                         </span>
                         <span class="icons">
                             <span>
-                                <img src="../assets/views.svg" alt=""> 0
+                                <img src="../assets/views.svg" alt=""> {{ Preview.id_akses_baca }}
                             </span>
                             <span>
-                                <img src="../assets/comment.svg" alt=""> 0
+                                <img src="../assets/comment.svg" alt=""> {{ Preview.id_akses_komentar }}
                             </span>
 
                         </span>
@@ -45,6 +43,15 @@
         </div>
     </a>
 </template>
+
+<script>
+export default {
+    name: 'App',
+    props: {
+        Preview: Object
+    }
+}
+</script>
 
 <style scoped>
 a {
@@ -59,6 +66,8 @@ a {
     margin: 25px 0 35px 0;
     background: rgba(255, 255, 255, 1);
     transition: 400ms;
+    padding: 15px;
+    width: 60vw;
 }
 
 .card:hover {
@@ -66,26 +75,38 @@ a {
 }
 
 .card-body {
+    width: 100%;
     height: 200px;
 }
 
-.card-text {
-    max-height: 50px;
-    text-overflow: ellipsis;
+.card-content {
     overflow: hidden;
+    width: 68%;
+}
+
+.card-head {
+    margin-bottom: 20px;
+}
+
+
+.card-text {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
 }
 
 .flex-item {
-    margin-left: 30px;
+    margin: auto 30px;
 }
 
 .preview-pict {
     width: 120px;
-    margin: 10px 25px;
 }
 
 .card-info {
     font-size: 14px;
+    width: 100%;
 }
 
 .publish-date {}

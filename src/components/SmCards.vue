@@ -4,9 +4,12 @@
         <ul>
             <li class="card-list mt-3 mb-3">
                 <a href="" class="article-card">
-                    <div class="sm-card">
-                        <div class="card-body d-flex">
-                            <img src="../assets/empty-pic.svg" alt="" style="width:50px; margin:8px">
+                    <div class="sm-card card">
+                        <div class="sm-card-body d-flex">
+                            <div class="flex-item my-auto">
+                                <img src="../assets/empty-pic.svg" alt="" style="width:50px; margin:6px">
+                            </div>
+
                             <div class="flex-item article-preview">
                                 <h6>Article Title</h6>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nisi, consequatur
@@ -17,34 +20,7 @@
                     </div>
                 </a>
             </li>
-            <li class="card-list mt-4 mb-3">
-                <a href="" class="article-card">
-                    <div class="sm-card">
-                        <div class="card-body d-flex">
-                            <img src="../assets/empty-pic.svg" alt="" style="width:50px; margin:8px">
-                            <div class="flex-item article-preview">
-                                <h6>Article Title</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum illo, eligendi
-                                    quas tenetur odit, doloribus asperiores, soluta repellat aut cum voluptatibus
-                                    veritatis. Quis optio ab iste, reprehenderit numquam placeat nostrum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="card-list mt-4 mb-3">
-                <a href="" class="article-card">
-                    <div class="sm-card">
-                        <div class="card-body d-flex">
-                            <img src="../assets/empty-pic.svg" alt="" style="width:50px; margin:8px">
-                            <div class="flex-item article-preview">
-                                <h6>Article Title</h6>
-                                <p>Lorem ipsum dolor sit amet</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
+
         </ul>
     </div>
 </template>
@@ -61,21 +37,29 @@ export default {
 }
 
 .sm-card {
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     display: flex;
-    width: 110%;
-    right: 10px;
+    width: 100%;
     height: 80px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.sm-card-body {
+    width: 80%;
+    margin: auto 4px;
+    padding: 0;
+}
+
 .article-preview {
+    max-width: 125px;
     padding: 15px 5px 15px 0;
     text-align: left;
     margin: 10 5px;
+    white-space: nowrap;
     line-height: normal;
     overflow: hidden;
+    text-overflow: clip;
 }
 
 .article-preview>p {

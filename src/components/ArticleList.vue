@@ -1,20 +1,8 @@
 <template>
-    <div class="container article-list justify-content-start" style="width: fit-content">
+    <div class="article-list">
         <ul>
-            <li>
-                <ArticleCard></ArticleCard>
-            </li>
-            <li>
-                <ArticleCard></ArticleCard>
-            </li>
-            <li>
-                <ArticleCard></ArticleCard>
-            </li>
-            <li>
-                <ArticleCard></ArticleCard>
-            </li>
-            <li>
-                <ArticleCard></ArticleCard>
+            <li v-for="article in articleList" :key="article._id">
+                <ArticleCard :Preview=article></ArticleCard>
             </li>
         </ul>
     </div>
@@ -27,14 +15,18 @@ export default {
     name: 'App',
     components: {
         ArticleCard
+    },
+    props: {
+        articleList: Array
     }
+
 }
 </script>
 
 <style>
 .article-list {
-    display: flex;
     margin-right: 30px;
+    max-width: 90%;
 }
 
 ul {

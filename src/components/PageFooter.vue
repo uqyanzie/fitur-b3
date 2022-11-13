@@ -49,6 +49,7 @@
 
 <style scoped>
 .footer {
+    position: relative;
     background-color: #309C9F;
     height: 300px;
     width: 100%;

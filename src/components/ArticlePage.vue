@@ -30,7 +30,7 @@ export default {
 <style scoped>
 .article-page {
   background-color: #309C9F;
-  height: 200vh;
+  height: 225vh;
   margin: 0;
 }
 
@@ -38,6 +38,10 @@ export default {
   border-radius: 50px 0 0 0;
   background: rgba(245, 245, 245, 1);
   display: flex;
+}
+
+.container {
+  height: fit-content;
 }
 
 .right-bar {
